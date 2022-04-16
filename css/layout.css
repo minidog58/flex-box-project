@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+header{
+    height: 100px;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+footer{
+    height: 40px;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    min-height: 40px;
+    flex-direction: row;
+}
+
+article{
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 80%;
+    height: 300px;
+}
+article > section{
+    flex: 1 1 200px; /* got this from https://developer.mozilla.org/en-US/docs/Web/CSS/flex*/
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    
+}
+
+aside{
+    float: right;
+    width: 20%;
+    height: 300px;
+}
+
+
+@media screen and (max-width: 600px){
+    aside{
+        display: none;
+    }
+    nav{
+        flex-direction: column;
+    }
+    nav > section > article{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    div > article > section{
+        margin:10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        float: left;
+    }
+}
